@@ -85,7 +85,7 @@ class Ijk(private val registry: PluginRegistry.Registrar, private val options: M
                     val mediaUrl = call.argument<String>("mediaUrl")
                     if (mediaUrl != null) {
                         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
-                            setUri("file://$mediaUrl", hashMapOf()) { throwable ->
+                            setUri(mediaUrl, hashMapOf()) { throwable ->
                                 handleSetUriResult(throwable, result)
                             }
                         } else {
