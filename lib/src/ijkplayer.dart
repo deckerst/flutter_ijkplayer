@@ -39,6 +39,8 @@ class IjkPlayer extends StatefulWidget {
 
   final StatusWidgetBuilder statusWidgetBuilder;
 
+  final Color backgroundColor;
+
   /// Main Classes of Library
   const IjkPlayer({
     Key key,
@@ -46,6 +48,7 @@ class IjkPlayer extends StatefulWidget {
     this.controllerWidgetBuilder = defaultBuildIjkControllerWidget,
     this.textureBuilder = buildDefaultIjkPlayer,
     this.statusWidgetBuilder = IjkStatusWidget.buildStatusWidget,
+    this.backgroundColor,
   }) : super(key: key);
 
   @override
@@ -104,7 +107,7 @@ class IjkPlayerState extends State<IjkPlayer> {
 //    return stack;
     return Material(
       child: stack,
-      color: Colors.black,
+      color: widget.backgroundColor ?? Colors.black,
     );
   }
 
