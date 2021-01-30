@@ -125,12 +125,10 @@ mixin IjkMediaControllerStreamMixin {
     }
   }
 
-  /// playFinish
   StreamController<IjkStatus> _ijkStatusController =
       StreamController.broadcast();
 
-  /// On play finish
-  Stream<IjkStatus> get ijkStatusStream => _ijkStatusController.stream;
+  Stream<IjkStatus> get ijkStatusStream => _ijkStatusController?.stream;
 
   /// errorStream
   StreamController<int> _ijkErrorController = StreamController.broadcast();

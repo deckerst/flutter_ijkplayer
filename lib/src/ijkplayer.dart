@@ -140,15 +140,16 @@ class IjkPlayerState extends State<IjkPlayer> {
   }
 
   Widget buildIjkStateWidget() {
-    return StreamBuilder<IjkStatus>(
-      initialData: controller.ijkStatus,
-      stream: controller.ijkStatusStream,
-      builder: (BuildContext context, snapshot) {
-        return widget.statusWidgetBuilder
-                ?.call(context, controller, snapshot.data) ??
-            Container();
-      },
-    );
+    final statusStream = controller.ijkStatusStream;
+    return statusStream != null
+        ? StreamBuilder<IjkStatus>(
+            initialData: controller.ijkStatus,
+            stream: statusStream,
+            builder: (BuildContext context, snapshot) {
+              return widget.statusWidgetBuilder?.call(context, controller, snapshot.data) ?? Container();
+            },
+          )
+        : SizedBox();
   }
 }
 
