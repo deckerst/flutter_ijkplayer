@@ -4,8 +4,11 @@ version: 0.3.7
 # author: caijinglong<cjl_spy@163.com>
 homepage: https://github.com/CaiJingLong/flutter_ijkplayer
 
+# forked version is not published
+publish_to: 'none'
+
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: '>=2.10.0 <3.0.0'
 
 dependencies:
   flutter:
